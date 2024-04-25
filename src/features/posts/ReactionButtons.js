@@ -24,6 +24,7 @@ const ReactionButtons = ({ post }) => {
            className="reactionButton"
            onClick={() =>
               dispatch(reactionAdded({ postId: post.id, reaction: name}))
+            
            }
            
         >
