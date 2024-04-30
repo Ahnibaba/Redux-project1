@@ -5,10 +5,13 @@
  import { addNewPost } from "./postsSlice";
  import { selectAllUsers } from "../users/usersSlice";
 
+import { useNavigate } from "react-router-dom";
  
  
  const AddPostForm = () => {
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -43,6 +46,8 @@
             console.error("failed to save the post", err);
          } finally {
             setAddRequestStatus("idle")
+            navigate("/");
+
          }
        }
     }
